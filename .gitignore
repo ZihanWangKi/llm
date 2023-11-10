@@ -1,0 +1,4 @@
+__pycache__
+FastChat
+test_model*
+wandb
