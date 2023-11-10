@@ -1,6 +1,7 @@
-# 1.82s/it
+# batch size 4, max length = 2048, using 4 gpus fits in 50G per gpu
+# batch size 1, max length = 512, using 8 gpus fits in 24G per gpu
 
-torchrun --nproc_per_node=2 --master_port=20001 train_mem.py \
+torchrun --nproc_per_node=2 --master_port=20001 train_full.py \
     --model_name_or_path /data/shared/llama-hf/llama-2-7b-hf \
     --data_path "3x+1".json \
     --bf16 True \
@@ -22,5 +23,4 @@ torchrun --nproc_per_node=2 --master_port=20001 train_mem.py \
     --fsdp_transformer_layer_cls_to_wrap 'LlamaDecoderLayer' \
     --tf32 True \
     --model_max_length 2048 \
-    --gradient_checkpointing True \
-    --lazy_preprocess True
+    --gradient_checkpointing True

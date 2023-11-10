@@ -1,4 +1,6 @@
-# 1.82s/it
+# max length = 512 fits in 12G
+# max length = 2048 fits in 23G
+
 
 deepspeed train_lora.py \
     --model_name_or_path /data/shared/llama-hf/llama-2-7b-hf \
@@ -9,7 +11,7 @@ deepspeed train_lora.py \
     --bf16 True \
     --output_dir test_model_3x1_lora \
     --num_train_epochs 3 \
-    --per_device_train_batch_size 16 \
+    --per_device_train_batch_size 1 \
     --per_device_eval_batch_size 1 \
     --gradient_accumulation_steps 1 \
     --evaluation_strategy "no" \
@@ -22,6 +24,6 @@ deepspeed train_lora.py \
     --lr_scheduler_type "cosine" \
     --logging_steps 1 \
     --tf32 True \
-    --model_max_length 512 \
+    --model_max_length 2048 \
     --q_lora True \
     --deepspeed deepspeed_config_s2.json
