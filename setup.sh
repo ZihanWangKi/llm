@@ -2,7 +2,7 @@
 conda install -y pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=11.8 -c pytorch -c nvidia
 
 # inference
-pip install vllm
+pip install vllm==0.2.1.post1
 
 # finetune
 conda install -y -c "nvidia/label/cuda-11.8.0" cuda-nvcc
