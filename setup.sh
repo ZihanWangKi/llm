@@ -7,7 +7,7 @@ pip install vllm==0.2.1.post1
 # finetune
 conda install -y -c "nvidia/label/cuda-11.8.0" cuda-nvcc
 pip install transformers==4.34.0
-pip install "fschat[model_worker,train]"
+pip install "fschat[model_worker,train]==0.2.32"
 
 # lora finetune
 pip install deepspeed bitsandbytes scipy
